@@ -1,7 +1,6 @@
 package com.example.android.miwok;
 
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
@@ -14,15 +13,8 @@ import android.widget.TextView;
 import java.util.List;
 
 public class WordAdapter extends RecyclerView.Adapter<WordAdapter.ViewHolder> {
-    MediaPlayer mMediaPlayer;
     private Context context;
     private List<Word> words;
-    private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
-        @Override
-        public void onCompletion(MediaPlayer mp) {
-            releaseMediaPlayer();
-        }
-    };
 
     /**
      * Resource ID for the background color for this list of words
@@ -70,22 +62,6 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.ViewHolder> {
     }
 
     /**
-     * Clean up the media player by releasing its resources.
-     */
-    private void releaseMediaPlayer() {
-        // If the media player is not null, then it may be currently playing a sound.
-        if (mMediaPlayer != null) {
-            // Regardless of the current state of the media player, release its resources
-            // because we no longer need it.
-            mMediaPlayer.release();
-            // Set the media player back to null. For our code, we've decided that
-            // setting the media player to null is an easy way to tell that the media player
-            // is not configured to play an audio file at the moment.
-            mMediaPlayer = null;
-        }
-    }
-
-    /**
      * ViewHolder results in better performance so we don't have to findViewById every time onBindViewHolder() is accessed.
      * Views are stored for easy access later on.
      */
@@ -95,27 +71,16 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.ViewHolder> {
         private TextView textViewPrimary;
         private TextView textViewSecondary;
         private ImageView image;
-        private View parentView;
+        private View playIcon;
 
         public ViewHolder(@NonNull View view) {
             // find views and assign for later use
             super(view); // use constructor of super
-            this.parentView = view;
             this.textContainer = view.findViewById(R.id.text_container);
             this.textViewPrimary = view.findViewById(R.id.textViewPrimary);
             this.textViewSecondary = view.findViewById(R.id.textViewSecondary);
             this.image = view.findViewById(R.id.image);
-            parentView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    final int position = getAdapterPosition();
-                    releaseMediaPlayer();
-                    mMediaPlayer = MediaPlayer.create(context, words.get(position).getAudioResourceId());
-                    mMediaPlayer.start();
-                    mMediaPlayer.setOnCompletionListener(mCompletionListener); // setup a listener on the MediaPlayer,
-                    // so we can stop and release the MediaPlayer when it is finished playing.
-                }
-            });
+
 
         }
     }
