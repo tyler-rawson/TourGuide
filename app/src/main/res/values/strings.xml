@@ -1,31 +1,30 @@
-<!-- Copyright (C) 2016 The Android Open Source Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
 <resources>
-    <!-- Title for the application. [CHAR LIMIT=12] -->
-    <string name="app_name">Miwok</string>
+    <!-- Title for the application. -->
+    <string name="app_name">Welcome to Portland</string>
 
-    <!-- Category name for phrases [CHAR LIMIT=20] -->
-    <string name="category_phrases">Phrases</string>
+    <!-- Category name for restaurant locations -->
+    <string name="category_restaurants">Restaurants</string>
 
-    <!-- Category name for the vocabulary words for colors [CHAR LIMIT=20] -->
-    <string name="category_colors">Colors</string>
+    <!-- Category name for entertainment locations -->
+    <string name="category_entertainment">Entertainment</string>
 
-    <!-- Category name for the vocabulary words for numbers [CHAR LIMIT=20] -->
-    <string name="category_numbers">Numbers</string>
+    <!-- Category name for park locations -->
+    <string name="category_parks">Parks</string>
 
-    <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
-    <string name="category_family">Family</string>
+    <!-- Category name for museum locations -->
+    <string name="category_museums">Museums</string>
+
+    <!-- Return operating hours of a location in the format "Hours: 7a-7p".
+         Includes extra whitespace after the word -->
+    <string name="hours">Hours:\u0020</string>
+
+    <!-- Informs the user there is no available phone number for selected location -->
+    <string name="unknown_phone_number">Unknown phone</string>
+
+    <!-- Informs the user there are no available location hours for selected location -->
+    <string name="unknown_hours">Unknown hours</string>
+
+    <!-- Informs the user there is no available address for selected location -->
+    <string name="unknown_address">Unknown address</string>
 
 </resources>

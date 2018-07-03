@@ -488,7 +488,7 @@ following conditions.
                hyperlink to, this Public License.
 
        2. You may satisfy the conditions in Section 3(a)(1) in any
-          reasonable manner based on the medium, means, and context in
+          reasonable manner based on the medium, means, and mContext in
           which You Share the Licensed Material. For example, it may be
           reasonable to satisfy the conditions by providing a URI or
           hyperlink to a resource that includes the required
@@ -509,7 +509,7 @@ following conditions.
        2. You must include the text of, or the URI or hyperlink to, the
           Adapter's License You apply. You may satisfy this condition
           in any reasonable manner based on the medium, means, and
-          context in which You Share Adapted Material.
+          mContext in which You Share Adapted Material.
 
        3. You may not offer or impose any additional or different terms
           or conditions on, or apply any Effective Technological
