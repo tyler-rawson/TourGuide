@@ -18,7 +18,6 @@ import java.util.Objects;
  * A simple {@link Fragment} subclass.
  */
 public class EntertainmentFragment extends Fragment {
-
     public EntertainmentFragment() {
         // Required empty public constructor
     }
@@ -28,20 +27,21 @@ public class EntertainmentFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.word_list, container, false);
         RecyclerView recyclerView = rootView.findViewById(R.id.list);
-        final ArrayList<Location> entertainmentArrayList = new ArrayList<Location>();
-        entertainmentArrayList.add(new Location(getActivity(), "Hollywood Theatre", "8AM-5PM", "4122 NE Sandy Blvd", "(503) 493-1128", R.drawable.hollywood_theatre));
-        entertainmentArrayList.add(new Location(getActivity(), "Laurelhurst Theater", "9AM-10PM", "2735 E Burnside St", "(503) 232-5511", R.drawable.laurelhurst));
-        entertainmentArrayList.add(new Location(getActivity(), "Living Room Theaters", "11AM-10PM", "341 SW 10th Ave", "(971) 222-2010", R.drawable.living_room_theaters));
-        entertainmentArrayList.add(new Location(getActivity(), "Moda Center", "", "1 N Center Ct St", "(503) 235-8771", R.drawable.moda_center));
-        entertainmentArrayList.add(new Location(getActivity(), "Oaks Amusement Park", "12PM-10PM", "7805 SE Oaks Park Way", "(503) 233-5777", R.drawable.oaks_amusement_park));
-        entertainmentArrayList.add(new Location(getActivity(), "Oregon Zoo", "9:30AM-6:00PM", "4001 Southwest Canyon Road", "(503) 226-1561", R.drawable.oregonzoo));
-        entertainmentArrayList.add(new Location(getActivity(), "Portland Spirit Cruises & Events", "8AM-5:30PM", "110 SE Caruthers St", "(503) 224-3900", R.drawable.portland_spirit_cruises));
-        entertainmentArrayList.add(new Location(getActivity(), "Shanghai Tunnels / Portland Underground Tour", "9AM-11PM", "120 NW 3rd Ave", "(503) 622-4798", R.drawable.portland_underground_tour));
+        final ArrayList<Location> entertainmentArrayList = new ArrayList<>();
+        if (entertainmentArrayList.isEmpty()) {
+            entertainmentArrayList.add(new Location(getActivity(), getString(R.string.entertainment_name_1), getString(R.string.entertainment_hours_1), getString(R.string.entertainment_address_1), getString(R.string.entertainment_phone_1), R.drawable.hollywood_theatre));
+            entertainmentArrayList.add(new Location(getActivity(), getString(R.string.entertainment_name_2), getString(R.string.entertainment_hours_2), getString(R.string.entertainment_address_2), getString(R.string.entertainment_phone_2), R.drawable.laurelhurst));
+            entertainmentArrayList.add(new Location(getActivity(), getString(R.string.entertainment_name_3), getString(R.string.entertainment_hours_3), getString(R.string.entertainment_address_3), getString(R.string.entertainment_phone_3), R.drawable.living_room_theaters));
+            entertainmentArrayList.add(new Location(getActivity(), getString(R.string.entertainment_name_4), getString(R.string.entertainment_hours_4), getString(R.string.entertainment_address_4), getString(R.string.entertainment_phone_4), R.drawable.moda_center));
+            entertainmentArrayList.add(new Location(getActivity(), getString(R.string.entertainment_name_5), getString(R.string.entertainment_hours_5), getString(R.string.entertainment_address_5), getString(R.string.entertainment_phone_5), R.drawable.oaks_amusement_park));
+            entertainmentArrayList.add(new Location(getActivity(), getString(R.string.entertainment_name_6), getString(R.string.entertainment_hours_6), getString(R.string.entertainment_address_6), getString(R.string.entertainment_phone_6), R.drawable.oregonzoo));
+            entertainmentArrayList.add(new Location(getActivity(), getString(R.string.entertainment_name_7), getString(R.string.entertainment_hours_7), getString(R.string.entertainment_address_7), getString(R.string.entertainment_phone_7), R.drawable.portland_spirit_cruises));
+            entertainmentArrayList.add(new Location(getActivity(), getString(R.string.entertainment_name_8), getString(R.string.entertainment_hours_8), getString(R.string.entertainment_address_8), getString(R.string.entertainment_phone_8), R.drawable.portland_underground_tour));
+        }
         LocationAdapter adapter = new LocationAdapter(getActivity(), entertainmentArrayList, R.color.category_entertainment);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity())); // set the layout manager
         recyclerView.addItemDecoration(new DividerItemDecoration(Objects.requireNonNull(getActivity()), DividerItemDecoration.VERTICAL));
         recyclerView.setAdapter(adapter);
         return rootView;
     }
-
 }

@@ -18,7 +18,6 @@ import java.util.Objects;
  * A simple {@link Fragment} subclass.
  */
 public class RestaurantsFragment extends Fragment {
-
     public RestaurantsFragment() {
         // Required empty public constructor
     }
@@ -28,20 +27,21 @@ public class RestaurantsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.word_list, container, false);
         RecyclerView recyclerView = rootView.findViewById(R.id.list);
-        final ArrayList<Location> restaurantArrayList = new ArrayList<Location>();
-        restaurantArrayList.add(new Location(getActivity(), "Afuri", "11:30AM–10PM", "923 SE 7th Ave", "(503) 468-5001", R.drawable.afuri));
-        restaurantArrayList.add(new Location(getActivity(), "Dame", "5PM-10PM", "2930 NE Killingsworth St", "(503) 227-2669", R.drawable.dame));
-        restaurantArrayList.add(new Location(getActivity(), "Guero", "11AM-10PM", "200 NE 28th Ave", "(503) 887-9258", R.drawable.guero));
-        restaurantArrayList.add(new Location(getActivity(), "Jacqueline", "5PM-10PM", "2039 SE Clinton St", "(503) 327-8637", R.drawable.jacqueline));
-        restaurantArrayList.add(new Location(getActivity(), "OP Wurst", "11AM-10PM", "126 SW 2nd Ave", "(971) 386-2199", R.drawable.op_wurst));
-        restaurantArrayList.add(new Location(getActivity(), "Q Restaurant & Bar", "11AM-12AM", "828 SW 2nd Ave", "(503) 850-8915", R.drawable.q_restaurant));
-        restaurantArrayList.add(new Location(getActivity(), "Tusk", "5PM-10PM", "2448 E Burnside St", "(503) 894-8082", R.drawable.tusk));
-        restaurantArrayList.add(new Location(getActivity(), "XLB", "11AM-3PM, 5PM-10PM", "4090 N Williams Ave", "(503) 841-5373", R.drawable.xlb));
+        final ArrayList<Location> restaurantArrayList = new ArrayList<>();
+        if (restaurantArrayList.isEmpty()) {
+            restaurantArrayList.add(new Location(getActivity(), getString(R.string.restaurant_name_1), getString(R.string.restaurant_hours_1), getString(R.string.restaurant_address_1), getString(R.string.restaurant_phone_1), R.drawable.afuri));
+            restaurantArrayList.add(new Location(getActivity(), getString(R.string.restaurant_name_2), getString(R.string.restaurant_hours_2), getString(R.string.restaurant_address_2), getString(R.string.restaurant_phone_2), R.drawable.dame));
+            restaurantArrayList.add(new Location(getActivity(), getString(R.string.restaurant_name_3), getString(R.string.restaurant_hours_3), getString(R.string.restaurant_address_3), getString(R.string.restaurant_phone_3), R.drawable.guero));
+            restaurantArrayList.add(new Location(getActivity(), getString(R.string.restaurant_name_4), getString(R.string.restaurant_hours_4), getString(R.string.restaurant_address_4), getString(R.string.restaurant_phone_4), R.drawable.jacqueline));
+            restaurantArrayList.add(new Location(getActivity(), getString(R.string.restaurant_name_5), getString(R.string.restaurant_hours_5), getString(R.string.restaurant_address_5), getString(R.string.restaurant_phone_5), R.drawable.op_wurst));
+            restaurantArrayList.add(new Location(getActivity(), getString(R.string.restaurant_name_6), getString(R.string.restaurant_hours_6), getString(R.string.restaurant_address_6), getString(R.string.restaurant_phone_6), R.drawable.q_restaurant));
+            restaurantArrayList.add(new Location(getActivity(), getString(R.string.restaurant_name_7), getString(R.string.restaurant_hours_7), getString(R.string.restaurant_address_7), getString(R.string.restaurant_phone_7), R.drawable.tusk));
+            restaurantArrayList.add(new Location(getActivity(), getString(R.string.restaurant_name_8), getString(R.string.restaurant_hours_8), getString(R.string.restaurant_address_8), getString(R.string.restaurant_phone_8), R.drawable.xlb));
+        }
         LocationAdapter adapter = new LocationAdapter(getActivity(), restaurantArrayList, R.color.category_restaurants);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity())); // set the layout manager
         recyclerView.addItemDecoration(new DividerItemDecoration(Objects.requireNonNull(getActivity()), DividerItemDecoration.VERTICAL));
         recyclerView.setAdapter(adapter);
         return rootView;
     }
-
 }

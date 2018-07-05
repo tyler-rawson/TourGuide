@@ -1,30 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
     <!-- Title for the application. -->
     <string name="app_name">Welcome to Portland</string>
 
+    <!-- Category name for entertainment locations -->
+    <string name="category_entertainment">Entertainment</string>
+    <!-- Category name for museum locations -->
+    <string name="category_museums">Museums</string>
+    <!-- Category name for park locations -->
+    <string name="category_parks">Parks</string>
     <!-- Category name for restaurant locations -->
     <string name="category_restaurants">Restaurants</string>
 
-    <!-- Category name for entertainment locations -->
-    <string name="category_entertainment">Entertainment</string>
-
-    <!-- Category name for park locations -->
-    <string name="category_parks">Parks</string>
-
-    <!-- Category name for museum locations -->
-    <string name="category_museums">Museums</string>
-
-    <!-- Return operating hours of a location in the format "Hours: 7a-7p".
-         Includes extra whitespace after the word -->
+    <!-- Will be concatenated with another string to return operating hours of
+    a location in the format "Hours: 7a-7p". Includes extra whitespace after the word -->
     <string name="hours">Hours:\u0020</string>
 
-    <!-- Informs the user there is no available phone number for selected location -->
-    <string name="unknown_phone_number">Unknown phone</string>
+    <!-- Information for the entertainment, museum, park, and restaurant fragments.  -->
+    <string name="entertainment_address_1">4122 NE Sandy Blvd</string>
+    <string name="entertainment_address_2">2735 E Burnside St</string>
+    <string name="entertainment_address_3">341 SW 10th Ave</string>
+    <string name="entertainment_address_4">1 N Center Ct St</string>
+    <string name="entertainment_address_5">7805 SE Oaks Park Way</string>
+    <string name="entertainment_address_6">4001 Southwest Canyon Road</string>
+    <string name="entertainment_address_7">110 SE Caruthers St</string>
+    <string name="entertainment_address_8">120 NW 3rd Ave</string>
+    <string name="entertainment_hours_1">8AM-5PM</string>
+    <string name="entertainment_hours_2">9AM-10PM</string>
+    <string name="entertainment_hours_3">11AM-10PM</string>
+    <string name="entertainment_hours_4" />
+    <string name="entertainment_hours_5">12PM-10PM</string>
+    <string name="entertainment_hours_6">9:30AM-6:00PM</string>
+    <string name="entertainment_hours_7">8AM-5:30PM</string>
+    <string name="entertainment_hours_8">9AM-11PM</string>
+    <string name="entertainment_name_1">Hollywood Theatre</string>
+    <string name="entertainment_name_2">Laurelhurst Theater</string>
+    <string name="entertainment_name_3">Living Room Theaters</string>
+    <string name="entertainment_name_4">Moda Center</string>
+    <string name="entertainment_name_5">Oaks Amusement Park</string>
+    <string name="entertainment_name_6">Oregon Zoo</string>
+    <string name="entertainment_name_7"><![CDATA[Portland Spirit Cruises & Events]]></string>
+    <string name="entertainment_name_8">Shanghai Tunnels / Portland Underground Tour</string>
+    <string name="entertainment_phone_1">(503) 493-1128</string>
+    <string name="entertainment_phone_2">(503) 232-5511</string>
+    <string name="entertainment_phone_3">(971) 222-2010</string>
+    <string name="entertainment_phone_4">(503) 235-8771</string>
+    <string name="entertainment_phone_5">(503) 233-5777</string>
+    <string name="entertainment_phone_6">(503) 226-1561</string>
+    <string name="entertainment_phone_7">(503) 224-3900</string>
+    <string name="entertainment_phone_8">(503) 622-4798</string>
 
-    <!-- Informs the user there are no available location hours for selected location -->
-    <string name="unknown_hours">Unknown hours</string>
+    <string name="museum_address_1">122 NW 8th Ave</string>
+    <string name="museum_address_2">15607 SW 116th Ave</string>
+    <string name="museum_address_3">198 SW Naito Pkwy</string>
+    <string name="museum_address_4">1945 SE Water Ave</string>
+    <string name="museum_address_5">3229 NW Pittock Dr</string>
+    <string name="museum_address_6">1219 SW Park Ave</string>
+    <string name="museum_address_7">12 Captain Strout Cir</string>
+    <string name="museum_address_8">109 Danforth St</string>
+    <string name="museum_address_9">4033 Southwest Canyon Road</string>
+    <string name="museum_hours_1">12PM-5PM</string>
+    <string name="museum_hours_2">10AM-9PM</string>
+    <string name="museum_hours_3">11AM-4PM</string>
+    <string name="museum_hours_4">9:30AM-7PM</string>
+    <string name="museum_hours_5">9AM-5PM</string>
+    <string name="museum_hours_6">10AM-8PM</string>
+    <string name="museum_hours_7">6AM-6PM</string>
+    <string name="museum_hours_8">10AM-3:45PM</string>
+    <string name="museum_hours_9">10AM-5PM</string>
+    <string name="museum_name_1">Blue Sky Gallery</string>
+    <string name="museum_name_2">Interactive Museum of Gaming and Puzzlery</string>
+    <string name="museum_name_3">Oregon Maritime Museum</string>
+    <string name="museum_name_4">Oregon Museum of Science and Industry</string>
+    <string name="museum_name_5">Pittock Mansion</string>
+    <string name="museum_name_6">Portland Art Museum</string>
+    <string name="museum_name_7">Portland Head Light</string>
+    <string name="museum_name_8">Victoria Mansion</string>
+    <string name="museum_name_9">World Forestry Center</string>
+    <string name="museum_phone_1">(503) 225-0210</string>
+    <string name="museum_phone_2">(503) 968-9998</string>
+    <string name="museum_phone_3">(503) 224-7724</string>
+    <string name="museum_phone_4">(503) 797-4000</string>
+    <string name="museum_phone_5">(503) 823-3623</string>
+    <string name="museum_phone_6">(503) 226-2811</string>
+    <string name="museum_phone_7">(207) 799-2661</string>
+    <string name="museum_phone_8">(503) 970-0213</string>
+    <string name="museum_phone_9">(503) 228-1367</string>
+
+    <string name="park_hours_1">5AM-12AM</string>
+    <string name="park_hours_2">5AM-12AM</string>
+    <string name="park_hours_3">5AM-10AM</string>
+    <string name="park_hours_4">5AM-10:30PM</string>
+    <string name="park_hours_5">8AM-9PM</string>
+    <string name="park_hours_6">5AM-12AM</string>
+    <string name="park_hours_7">5AM-12AM</string>
+    <string name="park_hours_8">10AM-5PM</string>
+    <string name="park_hours_9">5AM-12AM</string>
+    <string name="park_hours_10">5A-12AM</string>
+    <string name="park_hours_11">5AM-10PM</string>
+    <string name="park_name_1">Cathedral Park</string>
+    <string name="park_name_2">Council Crest Park</string>
+    <string name="park_name_3">Forest Park</string>
+    <string name="park_name_4">Laurelhurst Park</string>
+    <string name="park_name_5">Mt. Tabor Park</string>
+    <string name="park_name_6">Overlook Park</string>
+    <string name="park_name_7">Pier Park</string>
+    <string name="park_name_8">Pittock Mansion Acres</string>
+    <string name="park_name_9">Tanner Springs Park</string>
+    <string name="park_name_10">Tom McCall Waterfront Park</string>
+    <string name="park_name_11">Washington Park</string>
+    <string name="park_address_1">8676 N Crawford St</string>
+    <string name="park_address_2">1120 SW Council Crest Dr</string>
+    <string name="park_address_3">4099 NW Thurman St</string>
+    <string name="park_address_4"><![CDATA[SE Cesar E Chavez Blvd & Stark St]]></string>
+    <string name="park_address_5">SE Salmon St</string>
+    <string name="park_address_6">1599 N Fremont St</string>
+    <string name="park_address_7">10325 N Lombard St</string>
+    <string name="park_address_8">3229 NW Pittock Dr</string>
+    <string name="park_address_9"><![CDATA[NW 10th Ave & Marshall Street]]></string>
+    <string name="park_address_10">98 SW Naito Pkwy</string>
+    <string name="park_address_11">4033 SW Canyon Rd</string>
+
+    <string name="restaurant_address_1">923 SE 7th Ave</string>
+    <string name="restaurant_address_2">2930 NE Killingsworth St</string>
+    <string name="restaurant_address_3">200 NE 28th Ave</string>
+    <string name="restaurant_address_4">2039 SE Clinton St</string>
+    <string name="restaurant_address_5">126 SW 2nd Ave</string>
+    <string name="restaurant_address_6">828 SW 2nd Ave</string>
+    <string name="restaurant_address_7">2448 E Burnside St</string>
+    <string name="restaurant_address_8">4090 N Williams Ave</string>
+    <string name="restaurant_hours_1">11:30AM–10PM</string>
+    <string name="restaurant_hours_2">5PM-10PM</string>
+    <string name="restaurant_hours_3">11AM-10PM</string>
+    <string name="restaurant_hours_4">5PM-10PM</string>
+    <string name="restaurant_hours_5">11AM-10PM</string>
+    <string name="restaurant_hours_6">11AM-12AM</string>
+    <string name="restaurant_hours_7">5PM-10PM</string>
+    <string name="restaurant_hours_8">11AM-3PM, 5PM-10PM</string>
+    <string name="restaurant_name_1">Afuri</string>
+    <string name="restaurant_name_2">Dame</string>
+    <string name="restaurant_name_3">Guero</string>
+    <string name="restaurant_name_4">Jacqueline</string>
+    <string name="restaurant_name_5">OP Wurst</string>
+    <string name="restaurant_name_6"><![CDATA[Q Restaurant & Bar]]></string>
+    <string name="restaurant_name_7">Tusk</string>
+    <string name="restaurant_name_8">XLB</string>
+    <string name="restaurant_phone_1">(503) 468-5001</string>
+    <string name="restaurant_phone_2">(503) 227-2669</string>
+    <string name="restaurant_phone_3">(503) 887-9258</string>
+    <string name="restaurant_phone_4">(503) 327-8637</string>
+    <string name="restaurant_phone_5">(971) 386-2199</string>
+    <string name="restaurant_phone_6">(503) 850-8915</string>
+    <string name="restaurant_phone_7">(503) 894-8082</string>
+    <string name="restaurant_phone_8">(503) 841-5373</string>
 
     <!-- Informs the user there is no available address for selected location -->
     <string name="unknown_address">Unknown address</string>
-
+    <!-- Informs the user there are no available location hours for selected location -->
+    <string name="unknown_hours">Unknown hours</string>
+    <!-- Informs the user there is no available phone number for selected location -->
+    <string name="unknown_phone_number">Unknown phone</string>
 </resources>

@@ -3,7 +3,9 @@ package com.example.android.tourguide;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
@@ -14,10 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
@@ -45,8 +47,9 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
         final Location currentLocation = mLocationList.get(position); // get the object at this position in the list
         ImageView image = viewHolder.image;
         if (currentLocation.hasImage()) {
-            Glide.with(mContext)
+            Glide.with((mContext))
                     .load(currentLocation.getImageResourceId())
+                    .apply(new RequestOptions().placeholder(new ColorDrawable(Color.GRAY)))
                     .into(image);
         } else {
             image.setVisibility(View.GONE);
@@ -56,7 +59,6 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
         TextView locationHours = viewHolder.textViewHours;
         TextView locationAddress = viewHolder.textViewAddress;
         TextView locationPhoneNumber = viewHolder.textViewPhoneNumber;
-        LinearLayout rootView = viewHolder.rootView;
         View textContainer = viewHolder.textContainer;
         locationTitle.setText(currentLocation.getLocationTitle());
         locationAddress.setText(currentLocation.getLocationAddress());
@@ -70,7 +72,13 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
         int color = ContextCompat.getColor(mContext, mColorResourceId); // find the color that the resource ID maps to
         textContainer.setBackgroundColor(color); // set the background color of the text container view -- note it is wrap_content so
         frameLayout.setBackgroundColor(color); // we've got to set parent @id/frame_layout this color as well to fill in any background color gaps.
-        rootView.setBackgroundColor(color);
+    }
+
+    @Override
+    public void onViewRecycled(@NonNull ViewHolder viewHolder) {
+        super.onViewRecycled(viewHolder);
+        ImageView image = viewHolder.image;
+        Glide.with(mContext).clear(image);
     }
 
     @Override
@@ -92,7 +100,6 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
         private TextView textViewHours;
         private TextView textViewPhoneNumber;
         private ImageView image;
-        private LinearLayout rootView;
 
         public ViewHolder(@NonNull View view) {
             // find views and assign for later use
@@ -104,7 +111,6 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
             this.textViewHours = view.findViewById(R.id.textViewHours);
             this.textViewPhoneNumber = view.findViewById(R.id.textViewPhoneNumber);
             this.image = view.findViewById(R.id.imageView);
-            this.rootView = view.findViewById(R.id.rootView);
             textViewAddress.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -130,5 +136,4 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
 
         }
     }
-
 }
